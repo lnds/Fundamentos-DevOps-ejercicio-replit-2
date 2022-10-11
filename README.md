@@ -80,6 +80,14 @@ flask-sqlalchemy = "^3.0.0"
 psycopg2-binary = "^2.9.4"
 ```
 
+Ejecuta el script en la ventana shell:
+
+```
+python initdb.py
+```
+
+
+Verifica que la base se creó en Elephant
 
 ### Pregunta 1:
 
