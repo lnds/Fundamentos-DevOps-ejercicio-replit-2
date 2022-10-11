@@ -98,7 +98,7 @@ TIP:
 ```
 conn_string = os.environ['CONNECTION_STRING']
 conn = psycopg2.connect(conn_string)
-
+```
 
 
 ### Pregunta 2:
