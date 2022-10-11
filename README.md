@@ -119,15 +119,17 @@ conn = psycopg2.connect(conn_string)
 Modifica en `main.py` agregando esta función antes de la función `index()`:
 
 ```
+from flask import Flask
+import psycopg2
+import os
+
+app = Flask(__name__)
+
 def get_db_connection():
   conn_string = os.environ['CONNECTION_STRING']
   conn = psycopg2.connect(conn_string)
   return conn
-```
 
-Ahora modifica `index()` del siguiente modo:
-
-```python
 @app.route('/')
 def index():
   conn = get_db_connection()
@@ -137,16 +139,18 @@ def index():
   response = ""
   for movie in movies:
     response += "<div>"
-    response += "<h3>" + movie[0] + " - " + movie[1] + "</h3>
-    response += "<h3>" + movie[0] + " - " + movie[1] + "</h3>
-    response += "<i><p>(" + movie[2] + ")</p></i>"
+    response += "<h3>" + str(movie[0]) + " - " + movie[1] + "</h3>"
+    response += "<i><p>(" + str(movie[2])+ ")</p></i>"
     response += "<i><p>Director: " + movie[3] + "</p></i>"
     response += "<p>" + movie[5]+  "</p>"
-    response += "<i><p>Rating: " + movie[4] +" / 5</p></i>"
-    response += "<i><p>Added" + movie[6] "</p></i>"
+    response += "<i><p>Rating: " + str(movie[4]) +" / 5</p></i>"
+    response += "<i><p>Added" + str(movie[6]) + "</p></i>"
   cur.close()
   conn.close()
-  return render_template('index.html', movies=movies)
+  return response
+
+app.run(host='0.0.0.0', port=8080)
+
 ```
 
 Ejecuta usando el boton play de REPLIT
