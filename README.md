@@ -42,12 +42,12 @@ cur = conn.cursor()
 # Execute a command: this creates a new table
 cur.execute('DROP TABLE IF EXISTS movies;')
 cur.execute('CREATE TABLE movies (id serial PRIMARY KEY,'
-                                 'title varchar (150) NOT NULL,'
+                                 'title VARCHAR (150) NOT NULL,'
                                  'year INT NOT NULL,'
-                                 'director varchar (50) NOT NULL,'
+                                 'director VARCHAR (50) NOT NULL,'
                                  'rating INT,'
-                                 'review text,'
-                                 'date_added date DEFAULT CURRENT_TIMESTAMP);'
+                                 'review TEXT,'
+                                 'date_added DATE DEFAULT CURRENT_TIMESTAMP);'
                                  )
 
 # Insert data into the table
