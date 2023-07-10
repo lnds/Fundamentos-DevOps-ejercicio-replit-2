@@ -111,7 +111,7 @@ conn = psycopg2.connect(conn_string)
 
 ### Pregunta 2:
 
-¿Cuáles factores hemos usado al usar un secret
+¿Cuáles de los 12 factores hemos usado al usar los secrets?
 
 
 ## Modificar la url index para mostrar nuestros datos
