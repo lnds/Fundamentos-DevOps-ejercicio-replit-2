@@ -91,7 +91,7 @@ Verifica que la base se creó en Elephant
 
 ### Pregunta 1:
 
-¿Cuáles factores hemos usado al crear el script initdb?
+¿Cuál o cuales de los 12 factores hemos usado al crear initdb?
 
 ## Crear un secret
 
